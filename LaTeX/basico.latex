@@ -1,0 +1,45 @@
+\documentclass{book}
+
+\begin{document}
+
+Leia tanto o código-fonte desse documento quanto ele compilado para entender
+LaTeX!
+
+Tex é uma linguagem de baixo nível de criação de documentos. LaTeX é um conjunto
+de macros para TeX.
+
+Assim como em Markdown, espaços são comprimidos e parágrafos são separados por
+linhas em branco. 
+
+LaTeX também possui carácteres reservados: \# \$ \% \^{} \& \_ \{ \} \~{}
+\textbackslash{}.
+
+Os comandos \textbackslash{}\^{} e \textbackslash{}\~{} colocam o carácter no
+carácter seguinte, por isso tem \{\} após.
+
+Os únicos carácteres ASCII visíveis que serão vistos de maneira diferente são
+\textless e \textgreater por problemas com encoding de fonte. Use os comandos
+para inseri-los.
+
+Escopo local de configuração pode ser feito com \{\}. Eventualmente isso não
+é possível e precisa-se usar os comandos \textbackslash{}bgroup
+e \textbackslash{}egroup
+
+Texto normal {\itshape diferente \bfseries agora} e normal de novo.
+
+Environments formam a árvore de documento (como a DOM de um HTML). Começa-se com
+\textbackslash{}begin\{nome\} e termina com o comando equivalente {\itshape
+end}.
+
+Comandos de LaTeX sempre começam com \textbackslash{}, são compostos só por
+letras e terminam em espaço, número ou outra não-letra. Ou então começam com
+\textbackslash{} e são compostos por uma única não-letra. Comandos podem receber
+argumentos entre \{\} e parâmetros opcionais entre [] logo após o nome do
+comando.
+
+Um switch pode ser equivalente a um comando, e ativa uma opção dentro de um
+escopo. Tem estrutura semelhante a um comando porém sem \{\}.
+
+Usa-se \% para fazer LaTex ignorar coisas.
+
+\end{document}

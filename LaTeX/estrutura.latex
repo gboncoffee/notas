@@ -1,0 +1,22 @@
+\documentclass{book}
+\author{GG}
+\title{Estrutura de Documentos {\LaTeX}}
+
+\begin{document}
+
+\maketitle
+
+A área acima de \textbackslash{}begin\{document\} é o preamble. LaTeX exige que
+o começo e o fim do documento seja especificado para poder utilizar as áreas
+antes e depois do mesmo (configurações, etc).
+
+No preamble, \textbackslash{}documentclass[opções]\{nome\} irá especificar
+o tipo de documento que estamos escrevendo. Distribuições podem ter vários.
+Normalmente, essa classe será provida pela sua universidade, revista ou etc. As
+opções desse comando sobrescrevem configurações da própria classe.
+
+Normalmente, configurações padrão incluem: fonte em 10pt, papel "letterpaper"
+(com algumas distribuições europeias usando "a4paper" como padrão). Outras
+opções incluem titlepage/notitlepage, twocolumn, etc.
+
+\end{document}

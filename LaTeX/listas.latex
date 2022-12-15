@@ -1,0 +1,26 @@
+\documentclass{book}
+\author{GG}
+\title{Listas em {\LaTeX}}
+
+\begin{document}
+
+\maketitle
+
+Listas ordenadas podem ser criadas assim:
+
+\begin{enumerate}
+\item Primeiro item
+\item Segundo item
+\item Terceiro item
+\end{enumerate}
+
+E listas não ordenadas podem ser criadas assim:
+
+\begin{itemize}
+\item Sem número
+\item Sem número
+\item Sem número
+\item Sem número
+\end{itemize}
+
+\end{document}
