@@ -110,4 +110,15 @@ fn main() {
  * runtime, o programa dará panic! caso tal regra seja quebrada.
  *
  * Para se ter mais de um empréstimo mutável de uma vez, então, usa-se Rc<RefCell<T>>.
+ *
+ * Perceba que com Rc<RefCell<T>> ou RefCell<Rc<T>> com tipos recursivos, há risco de se criar
+ * referências cíclicas permitidas pelo compilador. Tais referências também não seriam
+ * identificadas em runtime pelo reference counter. Dessa maneira, tem-se um vazamento de memória
+ * que Rust não consegue evitar. Por isso, é importante prestar atenção no manejo de tipos
+ * recursivos com RefCell<T> e Rc<T>.
+ *
+ * Outro tipo de smart pointer também serve para evitar referências cíclicas. Weak<T>, obtido com
+ * Rc::downgrade(). Essa referência não possui posse sobre o valor, e por isso, ao dereferenciar, o
+ * valor pode já não existir. Por isso, para usar o valor, deve-se chamar .upgrade() na instância
+ * de Weak<T>, que retorna Option<Rc<T>>.
  */
