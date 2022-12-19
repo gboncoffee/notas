@@ -91,3 +91,14 @@ fn num(num: &impl Number) -> impl Number {
 /*
  * Uma função assim, porém, continua podendo retornar só um tipo.
  */
+
+/*
+ * Pode-se utilizar traits como se fossem generics, utilizando a keyword dyn:
+ */
+pub struct Screen {
+    pub components: Vec<Box<dyn Draw>>,
+}
+/*
+ * Um Vec<T> que normalmente só poderia guardar um tipo, pode guardar qualquer Box<T> de qualquer T
+ * que implemente Draw. Isso tem custo de runtime.
+ */
