@@ -1,9 +1,10 @@
 fn main() {
 
-    //
-    // Por padrão, váriaveis em Rust são imutáveis. Isso é um dos recursos de segurança da
-    // linguagem.
-    //
+    /*
+     * Por padrão, váriaveis em Rust são imutáveis. Isso é um dos recursos de segurança da
+     * linguagem.
+     */
+
     // Para declarar uma váriavel mutável, basta adicionar mut à declaração:
     let x = 5;     // imutável
     let mut y = 6; // mutável
@@ -21,4 +22,13 @@ fn main() {
     // efetivamente uma nova váriavel, permite mudar o tipo assinalado para o nome:
     let spaces = "   ";
     let spaces = spaces.len();
+
 }
+/*
+ * Rust suporta váriaveis globais, chamadas static:
+ */
+static HELLO_WORLD: &str = "Hello, World!";
+static mut UNSAFE: &str = "This variable is unsafe";
+/*
+ * Todas tem o lifetime 'static. Acessar e modificar mutable static variables é unsafe.
+ */

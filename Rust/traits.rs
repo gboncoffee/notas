@@ -102,3 +102,41 @@ pub struct Screen {
  * Um Vec<T> que normalmente só poderia guardar um tipo, pode guardar qualquer Box<T> de qualquer T
  * que implemente Draw. Isso tem custo de runtime.
  */
+
+/*
+ * Pode-se associar os tipos implementados às traits, com um placeholder:
+ */
+pub trait Iterator {
+    type Item;
+    fn next(&mut self) -> Option<Self::Item>;
+}
+
+/*
+ * Quando se tem um tipo com mais de um método com mesmo nome, usa-se fully qualified syntax:
+ */
+trait Animal {
+    fn baby_name() -> String;
+}
+struct Dog;
+impl Dog {
+    fn baby_name() -> String {
+        String::from("Spot")
+    }
+}
+impl Animal for Dog {
+    fn baby_name() -> String {
+        String::from("puppy")
+    }
+}
+fn main() {
+    // default para a definida no próprio tipo (Spot)
+    println!("A baby dog is called a {}", Dog::baby_name());
+    // usa a da trait
+    println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
+}
+
+/*
+ * Pode-se "requerer" uma trait para outra trait, como se fossem superclasses de oop:
+ */
+use std::fmt;
+trait OutlinePrint: fmt::Display {}

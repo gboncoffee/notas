@@ -1,7 +1,9 @@
-// A orientação a objeto de Rust é zoada e isso é bom porque eu não
-// gosto de orientação a objeto.
-//
-// Na verdade, os nossos objetos são structs em si.
+/*
+ * A orientação a objeto de Rust é zoada e isso é bom porque eu não
+ * gosto de orientação a objeto.
+ *
+ * Na verdade, os nossos objetos são structs em si.
+ */
 
 // Métodos são funções declaradas no contexto de structs, e recebem
 // sempre o primeiro parâmetro self.
@@ -19,10 +21,12 @@ impl Rectangle {
         self.width * self.height
     }
 
-    // No geral, métodos devem receber &self ou &mut self, porque se
-    // receber somente self, ele irá tomar a posse do próprio self.
-    // Então é boa prática receber &self quando só precisar ler fields
-    // da struct e &mut self quando precisar escrever na struct.
+    /*
+     * No geral, métodos devem receber &self ou &mut self, porque se
+     * receber somente self, ele irá tomar a posse do próprio self.
+     * Então é boa prática receber &self quando só precisar ler fields
+     * da struct e &mut self quando precisar escrever na struct.
+     */
     
     // Note que é possível ter métodos com nomes de fields, e isso é
     // bem útil para implementar getters (Rust não os implementa
@@ -53,9 +57,14 @@ fn main() {
     // Funções associadas estão no namespace de seus tipos, então se
     // chama assim:
     let square = Rectangle::square(4);
+
+    // Perceba que métodos são funções associadas com o parâmetro self, então sempre pode-se chamar
+    // assim:
+    let area = Rectangle::area(&rect);
 }
 
-// Note ainda que não existe o operador -> para derreferenciar 
-// structs porque Rust implementa DERREFERENCIAMENTO AUTOMÁTICO que
-// por acaso também é uma coisa que muita gente gostaria que
-// existisse em C.
+/* Note ainda que não existe o operador -> para derreferenciar 
+ * structs porque Rust implementa DERREFERENCIAMENTO AUTOMÁTICO que
+ * por acaso também é uma coisa que muita gente gostaria que
+ * existisse em C.
+ */

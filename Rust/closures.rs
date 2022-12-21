@@ -47,10 +47,3 @@ fn main() {
         .join()
         .unwrap();
 }
-
-/*
- * Quanto a iterators, são igualmente métodos de primeira-classe. São lazy, ou seja, só são
- * evaluados quando necessário.
- */
-
-// A trait Iterator é definida assim:

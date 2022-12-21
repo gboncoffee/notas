@@ -2,7 +2,7 @@ use std::cmp::Ordering;
 
 fn main() {
 
-    // Matches lembrar switches e podem ser usados como, porém, é
+    // Matches lembram switches e podem ser usados como, porém, é
     // mais correto dizer assim:
     //
     // Matches pegam um pattern e veêm qual deles corresponde.
