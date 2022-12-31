@@ -46,4 +46,11 @@ fn main() {
     thread::spawn(move || println!("Na thread: {:?}", list))
         .join()
         .unwrap();
+
+}
+/*
+ * Para retornar closures, deve-se retornar um ponteiro:
+ */
+fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
 }
