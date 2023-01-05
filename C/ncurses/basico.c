@@ -17,13 +17,12 @@ int basico() {
     setlocale(LC_ALL, "POSIX");
 
     /*
-     * Inicia-se a biblioteca com initsrc(). Quando for tirar o terminal do
+     * Inicia-se a biblioteca com initscr(). Quando for tirar o terminal do
      * controle dela, deve-se chamar endwin(). Por isso, sempre chama-se
-     * endwin() no final do programa. Sendo assim, registra-o para que seja
-     * chamado de qualquer forma com atexit().
-     */
-    atexit(endwin);
-    initsrc();
+     * endwin() no final do programa.
+     * */
+    atexit(quit_window_and_exit);
+    initscr();
 
     // Desliga o buffered IO baseado em newlines.
     cbreak();
@@ -74,6 +73,8 @@ int basico() {
      * a depender da função. Geralmente, tratam NULL como erro. Funções que
      * retornam pointers retornam NULL como erro.
      */
+
+    endwin();
 	
 	return(0);
 }
