@@ -22,6 +22,10 @@ _start:
     mov eax, "asdf"
     ; Porém, por causa da endianess do x86, o texto ficará "ao contrário".
     ;
+    ; Copia, porém move o sign bit caso necessário. Serve para mover entre
+    ; registradores de diferentes tamanhos. O destino deve sempre ser um
+    ; registrador, a fonte pode ser memória.
+    movsx eax, bx
 
     ;
     ;
@@ -39,9 +43,14 @@ _start:
     ; Outras:
     ;
     ; Nega o valor (Gera o seu complemento, seu valor negativo ou seu valor
-    ; positivo)
+    ; positivo).
     neg eax
     ;
+    ; Soma os valores e guarda o resultado no primeiro registrador.
+    add eax, ebx
+    ;
+    ; Subtrai o segundo do primeiro e guarda o resultado no primeiro.
+    sub eax, ebx
 
     ;
     ;
