@@ -29,3 +29,10 @@ x = let c = a - b + 2
 -- pode redefinir variáveis dentro de um mesmo namespace.
 
 -- Tem operador ^ para exponenciar, ainda bem.
+
+-- A aplicação de funções tem a maior precedência de todas. Ou seja, ambos são iguais:
+succ 9 + max 5 4 + 1 
+(succ 9) + (max 5 4) + 1 
+
+-- Funções que recebem dois parâmetros podem ser chamadas como infixas usando ``:
+10 `div` 2
