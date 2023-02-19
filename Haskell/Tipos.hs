@@ -39,3 +39,18 @@ data Music a = Primitive (Primitive a)
 -- - Um primitivo como definido antes;
 -- - Um Music a ser tocado em sequência a outro;
 -- - Um Music a ser tocado em paralelo a outro;
+
+-- Qualquer coisa antes de => é um "Class constraint", como se fosse um
+-- requisito de trait em Rust. Define qual/quais typeclasses um tipo genérico
+-- deve implementar:
+-- :t (==)
+-- Eq(a) => a -> a -> Bool
+--
+-- Typeclasses importantes são:
+-- - Eq para comparações;
+-- - Ord para ordenação;
+-- - Show para converter para String (como Display em Rust);
+-- - Read para converter de String; 
+-- - Enum para tipos ordenados numericamente. Podem ser usados em ranges;
+-- - Bounded para tipos com valores máximo e mínimo;
+-- - Num para tipos que podem se comportar como números;
